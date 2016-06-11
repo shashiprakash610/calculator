@@ -8,31 +8,37 @@
 void printOptions();
 void askForFirstNumber();
 void askForSecondNumber();
-typedef struct
+typedef struct numberPair
 {
 	int firstNumber;
 	int secondNumber;
 }numberPair;
+numberPair readANumberPair();
 int main() {
 	int option;
 	do {
 		printOptions();
 		option = readANumber();
+		numberPair pair;
 		switch(option) {
 			case 1:
-				askForFirstNumber();
-				int firstNumber = readANumber();
-				askForSecondNumber();
-				int secondNumber = readANumber();
-				writeANumber(add(firstNumber, secondNumber));
+				pair = readANumberPair();
+				writeANumber(add(pair.firstNumber, pair.secondNumber));
 			break;
 			case 2:
+				pair = readANumberPair();
+				writeANumber(sub(pair.firstNumber, pair.secondNumber));
 			break;
 			case 3:
+				pair = readANumberPair();
+				writeANumber(mult(pair.firstNumber, pair.secondNumber));
 			break;
 			case 4:
+				pair = readANumberPair();
+				writeANumber(div(pair.firstNumber, pair.secondNumber));
 			break;
 			case 5:
+				
 			break;
 			default:
 				printf("%s\n", "You have choosen a wrong option");
@@ -59,3 +65,13 @@ void askForSecondNumber() {
 	printf("%s\n", "Enter second Number");
 }
 
+numberPair readANumberPair() {
+	askForFirstNumber();
+	int firstNumber = readANumber();
+	askForSecondNumber();
+	int secondNumber = readANumber();
+	numberPair pair;
+	pair.firstNumber = firstNumber;
+	pair.secondNumber = secondNumber;
+	return pair;
+}
