@@ -1,3 +1,3 @@
 void writeANumber(int number) {
-	printf("%d", number);
+	printf("Your result is %d\n", number);
 }
