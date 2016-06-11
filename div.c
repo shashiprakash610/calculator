@@ -1,5 +1,9 @@
 int div(int firstNumber, int secondNumber) {
-	firstNumber > secondNumber ? return firstNumber / secondNumber : return secondNumber / firstNumber; 
+	if (firstNumber > secondNumber) {
+		return firstNumber / secondNumber;
+	} else {
+		return secondNumber / firstNumber;
+	}  
 }
 
 

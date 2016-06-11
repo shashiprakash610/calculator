@@ -8,18 +8,23 @@
 void printOptions();
 void askForFirstNumber();
 void askForSecondNumber();
+typedef struct
+{
+	int firstNumber;
+	int secondNumber;
+}numberPair;
 int main() {
 	int option;
 	do {
-		printOptions()
-		option = readANumber()
+		printOptions();
+		option = readANumber();
 		switch(option) {
 			case 1:
 				askForFirstNumber();
-				int firstNumber = input();
+				int firstNumber = readANumber();
 				askForSecondNumber();
-				int secondNumber = input();
-				output(add(firstNumber, secondNumber));
+				int secondNumber = readANumber();
+				writeANumber(add(firstNumber, secondNumber));
 			break;
 			case 2:
 			break;
@@ -53,3 +58,4 @@ void askForFirstNumber() {
 void askForSecondNumber() {
 	printf("%s\n", "Enter second Number");
 }
+
